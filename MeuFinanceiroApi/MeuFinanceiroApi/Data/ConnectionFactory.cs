@@ -1,23 +1,17 @@
-﻿using MeuFinanceiroApi.Model;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MeuFinanceiroApi.Data
 {
-    public class ConnectionFactory
+    public class ConnectionFactory : IConnectionFactory
     {
         private string _connectionString { get; set; }
         private IDbConnection _dbConnection;
-        private EnviromentModel model;
-        public ConnectionFactory(EnviromentModel _envModel)
+
+        public ConnectionFactory(string Server, string DataBase, string User, string Password)
         {
-            _dbConnection = new SqlConnection();
-            model = _envModel;
-            _connectionString = $"Data Source={model.DataBaseParameters.Server};Initial Catalog=Cosmos_v14b;Persist Security Info=True;User ID={model.DataBaseParameters.User};Password={model.DataBaseParameters.Password};";
+            _connectionString = $"Data Source={Server};Initial Catalog={DataBase};Persist Security Info=True;User ID={User};Password={Password};";
+            _dbConnection = new SqlConnection(_connectionString);
         }
 
         public string GetConnectionString()

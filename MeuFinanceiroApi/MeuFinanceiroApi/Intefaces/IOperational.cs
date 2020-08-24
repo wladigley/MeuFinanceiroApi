@@ -7,10 +7,10 @@ namespace MeuFinanceiroApi.Intefaces
 {
     public interface IOperational<T>
     {
-        Task createAssync(T entity);
+        Task<int> createAssync(T entity);
         Task<IEnumerable<T>> readAllAssync();
         Task<T> readOneAssync(int id);
-        Task updateAssync(T entity);
+        Task<bool> updateAssync(T entity);
         Task deleteAssync(int id);
     }
 }

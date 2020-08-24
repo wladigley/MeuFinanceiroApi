@@ -7,6 +7,10 @@ services:
       - Server=localhost
       - Database=MeuFinanceiro
       - User=sa
-      - Password=245809
+      - Password=mq9437?tn
     ports:
       - "65135:80"
+networks:
+  default:
+   external:
+    name: network-cluster-docker

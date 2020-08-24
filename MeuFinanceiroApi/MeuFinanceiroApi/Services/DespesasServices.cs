@@ -1,10 +1,7 @@
 ﻿using MeuFinanceiroApi.Model;
-using MeuFinanceiroApi.Repositories;
 using MeuFinanceiroApi.Repositories.Interfaces;
 using MeuFinanceiroApi.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MeuFinanceiroApi.Services
@@ -16,9 +13,9 @@ namespace MeuFinanceiroApi.Services
         {
             despesasRepository = _despesasRepository;
         }
-        public async Task createAssync(Despesas entity)
+        public async Task<int> createAssync(Despesas entity)
         {
-            await despesasRepository.createAssync(entity);
+           return await despesasRepository.createAssync(entity);
         }
 
         public async Task deleteAssync(int id)
@@ -36,9 +33,9 @@ namespace MeuFinanceiroApi.Services
             return await despesasRepository.readOneAssync(id);
         }
 
-        public async Task updateAssync(Despesas entity)
+        public async Task<bool> updateAssync(Despesas entity)
         {
-            await despesasRepository.updateAssync(entity);
+            return await despesasRepository.updateAssync(entity);
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MeuFinanceiroApi.Data;
+﻿using MeuFinanceiroApi.Data;
 using MeuFinanceiroApi.Model;
 using MeuFinanceiroApi.Repositories;
 using MeuFinanceiroApi.Repositories.Interfaces;
@@ -13,9 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace MeuFinanceiroApi
 {
@@ -32,7 +27,12 @@ namespace MeuFinanceiroApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSingleton<EnviromentModel>().AddSingleton<ConnectionFactory>();
+
+            services.AddSingleton<DataBaseParameters>();
+
+            //DataBaseParameters 
+            var envModel = Configuration.Get<DataBaseParameters>();
+            services.AddTransient<ConnectionFactory>(ConnectionFactory => new ConnectionFactory(envModel.Server, envModel.DataBase, envModel.User, envModel.Password));
 
             services.AddTransient<IDespesasRepository, DespesasRepository>();
 

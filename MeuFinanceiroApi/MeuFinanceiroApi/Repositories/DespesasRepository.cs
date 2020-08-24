@@ -1,8 +1,9 @@
-﻿using Dapper.FastCrud;
+﻿using Dapper;
+using Dapper.FastCrud;
 using MeuFinanceiroApi.Data;
 using MeuFinanceiroApi.Model;
 using MeuFinanceiroApi.Repositories.Interfaces;
-using System;
+using MeuFinanceiroApi.Repositories.Scripts;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
@@ -17,9 +18,11 @@ namespace MeuFinanceiroApi.Repositories
             _dbConnenction = conn.GetDbConnectionOpened();
         }
 
-        public async Task createAssync(Despesas entity)
+        public async Task<int> createAssync(Despesas entity)
         {
-            await _dbConnenction.InsertAsync(entity);
+            // Poderia ser utilizado o Insert() do fastcrud, porém retorna void(), e quero que retorne o id inserido
+            // também podeira usar dapper.contrib que retorna o id da linha inserida, mas não optei por instalar mais uma biblioteca.
+            return await _dbConnenction.ExecuteAsync(DespesasScripts.INSERT_SINGLE_DESPESAS, entity);
         }
 
         public async Task deleteAssync(int id)
@@ -34,12 +37,12 @@ namespace MeuFinanceiroApi.Repositories
 
         public async Task<Despesas> readOneAssync(int id)
         {
-            return await _dbConnenction.GetAsync(new Despesas{Id = id});
+            return await _dbConnenction.GetAsync(new Despesas { Id = id });
         }
 
-        public async Task updateAssync(Despesas entity)
+        public async Task<bool> updateAssync(Despesas entity)
         {
-            await _dbConnenction.UpdateAsync(entity);
+            return await _dbConnenction.UpdateAsync(entity);
         }
     }
 }

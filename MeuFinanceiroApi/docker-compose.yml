@@ -11,6 +11,9 @@ services:
       Database: MeuFinanceiro
       User: sa
       Password: 245809
-
     ports:
       - "65135:80"
+networks:
+  default:
+   external:
+    name: network-cluster-docker

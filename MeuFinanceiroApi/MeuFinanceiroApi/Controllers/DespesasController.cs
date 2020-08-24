@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static MeuFinanceiroApi.Model.ResultView;
 
 namespace MeuFinanceiroApi.Controllers
 {
@@ -18,29 +19,38 @@ namespace MeuFinanceiroApi.Controllers
         {
             despesasServices = _despesasServices;
         }
+
         [HttpPut("atualizar")]
-        public Task<IActionResult> AtualizarAssync([FromBody]Despesas entity)
+        public async Task<IActionResult> AtualizarAssync([FromBody]Despesas entity)
         {
             throw new NotImplementedException();
         }
         [HttpPost("criar")]
-        public Task<IActionResult> CriarAssync([FromBody]Despesas entity)
+        public async Task<IActionResult> CriarAssync([FromBody]Despesas entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = despesasServices.createAssync(entity);
+                return Success(result);
+            }
+            catch (Exception ex)
+            {
+                return Error(ex, ex.Message.Contains('|') ? ex.Message : null);
+            }
         }
         [HttpDelete("remover/{id}")]
-        public Task<IActionResult> RemoverAssync(int id)
+        public async Task<IActionResult> RemoverAssync(int id)  
         {
             throw new NotImplementedException();
         }
         [HttpGet("retornar-todos")]
 
-        public Task<ActionResult<IEnumerable<Despesas>>> RetornarTodasAssync()
+        public async Task<ActionResult<IEnumerable<Despesas>>> RetornarTodasAssync()
         {
             throw new NotImplementedException();
         }
         [HttpGet("retornar-um/{id}")]
-        public Task<ActionResult<Despesas>> RetornarUmaAssync(int id)
+        public async Task<ActionResult<Despesas>> RetornarUmaAssync(int id)
         {
             throw new NotImplementedException();
         }
