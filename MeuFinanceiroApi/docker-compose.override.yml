@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  meufinanceiroapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Server=localhost
+      - Database=MeuFinanceiro
+      - User=sa
+      - Password=245809
+    ports:
+      - "65135:80"

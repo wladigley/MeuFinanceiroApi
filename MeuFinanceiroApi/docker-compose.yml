@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  meufinanceiroapi:
+    image: ${DOCKER_REGISTRY-}meufinanceiroapi
+    build:
+      context: .
+      dockerfile: MeuFinanceiroApi/Dockerfile
+    environment:
+      Server: localhost
+      Database: MeuFinanceiro
+      User: sa
+      Password: 245809
+
+    ports:
+      - "65135:80"
