@@ -13,7 +13,7 @@ namespace MeuFinanceiroApi.Repositories
     public class DespesasRepository : IDespesasRepository
     {
         private readonly IDbConnection _dbConnenction;
-        public DespesasRepository(ConnectionFactory conn)
+        public DespesasRepository(IConnectionFactory conn)
         {
             _dbConnenction = conn.GetDbConnectionOpened();
         }

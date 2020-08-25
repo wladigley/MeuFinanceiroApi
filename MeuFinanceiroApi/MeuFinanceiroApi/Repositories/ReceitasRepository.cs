@@ -13,7 +13,7 @@ namespace MeuFinanceiroApi.Repositories
     public class ReceitasRepository : IReceitasRepository
     {
         private readonly IDbConnection _dbConnenction;
-        public ReceitasRepository(ConnectionFactory conn)
+        public ReceitasRepository(IConnectionFactory conn)
         {
             _dbConnenction = conn.GetDbConnectionOpened();
         }

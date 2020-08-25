@@ -4,7 +4,7 @@ services:
   meufinanceiroapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Server=192.168.1.4
+      - Server=localhost
       - Database=MeuFinanceiro
       - User=sa
       - Password=245809

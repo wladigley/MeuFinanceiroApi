@@ -32,7 +32,7 @@ namespace MeuFinanceiroApi
 
             //DataBaseParameters 
             var envModel = Configuration.Get<DataBaseParameters>();
-            services.AddTransient<ConnectionFactory>(ConnectionFactory => new ConnectionFactory(envModel.Server, envModel.DataBase, envModel.User, envModel.Password));
+            services.AddTransient<IConnectionFactory,ConnectionFactory>(ConnectionFactory => new ConnectionFactory(envModel.Server, envModel.DataBase, envModel.User, envModel.Password));
 
             services.AddTransient<IDespesasRepository, DespesasRepository>();
             services.AddTransient<IDespesasServices, DespesasServices>();

@@ -14,7 +14,7 @@ namespace MeuFinanceiroApi.Repositories
     public class AcompanhamentoRepository : IAcompanhamentoRepository
     {
         private readonly IDbConnection _dbConnenction;
-        public AcompanhamentoRepository(ConnectionFactory conn)
+        public AcompanhamentoRepository(IConnectionFactory conn)
         {
             _dbConnenction = conn.GetDbConnectionOpened();
         }
