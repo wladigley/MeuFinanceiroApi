@@ -1,7 +1,6 @@
 ﻿using MeuFinanceiroApi.Model;
 using MeuFinanceiroApi.Repositories.Interfaces;
 using MeuFinanceiroApi.Services.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

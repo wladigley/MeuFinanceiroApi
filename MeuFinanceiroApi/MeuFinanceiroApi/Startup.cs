@@ -40,13 +40,16 @@ namespace MeuFinanceiroApi
             services.AddTransient<IReceitasRepository, ReceitasRepository>();
             services.AddTransient<IReceitasServices, ReceitasServices>();
 
+            services.AddTransient<IAcompanhamentoRepository, AcompanhamentoRepository>();
+            services.AddTransient<IAcompanhamentoServices, AcompanhamentoServices>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "Meu Financeiro",
-                    Description = "Registro das despesas e receitas.",
+                    Description = "Acompanhmamento e registro das despesas e receitas.",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {

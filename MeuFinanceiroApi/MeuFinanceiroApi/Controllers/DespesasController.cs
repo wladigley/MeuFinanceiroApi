@@ -18,7 +18,11 @@ namespace MeuFinanceiroApi.Controllers
         {
             despesasServices = _despesasServices;
         }
-
+        /// <summary>
+        /// Atualiza as infomações de uma Despesa já existente.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPut("atualizar")]
         public async Task<IActionResult> AtualizarAssync([FromBody]Despesas entity)
         {
@@ -33,7 +37,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Cria uma nova Despesa.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPost("criar")]
         public async Task<IActionResult> CriarAssync([FromBody]Despesas entity)
         {
@@ -48,7 +56,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Remove uma Despesa infomando seu Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("remover/{id}")]
         public async Task<IActionResult> RemoverAssync(int id)
         {
@@ -63,7 +75,10 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Retorna uma lista com todas as despesas cadastradas.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("retornar-todos")]
         public async Task<ActionResult<IEnumerable<Despesas>>> RetornarTodasAssync()
         {
@@ -78,7 +93,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Retorna somente uma Despesa de acordo com o Id informado.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("retornar-um/{id}")]
         public async Task<ActionResult<Despesas>> RetornarUmaAssync(int id)
         {

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MeuFinanceiroApi.Controllers.Interfaces;
+﻿using MeuFinanceiroApi.Controllers.Interfaces;
 using MeuFinanceiroApi.Model;
 using MeuFinanceiroApi.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using static MeuFinanceiroApi.Model.ResultView;
 
 namespace MeuFinanceiroApi.Controllers
@@ -21,7 +19,11 @@ namespace MeuFinanceiroApi.Controllers
             receitasServices = _receitasServices;
         }
 
-
+        /// <summary>
+        /// Atualiza as infomações de uma Receita já existente.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPut("atualizar")]
         public async Task<IActionResult> AtualizarAssync(Receitas entity)
         {
@@ -36,7 +38,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Cria uma nova Receita.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [HttpPost("criar")]
         public async Task<IActionResult> CriarAssync(Receitas entity)
         {
@@ -51,7 +57,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Remove uma Receitas infomando seu Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("remover/{id}")]
         public async Task<IActionResult> RemoverAssync(int id)
         {
@@ -66,7 +76,10 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Retorna uma lista com todas as Receitas cadastradas.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("retornar-todos")]
         public async Task<ActionResult<IEnumerable<Receitas>>> RetornarTodasAssync()
         {
@@ -81,6 +94,11 @@ namespace MeuFinanceiroApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna somente uma Receita de acordo com o Id informado.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("retornar-um/{id}")]
         public async Task<ActionResult<Receitas>> RetornarUmaAssync(int id)
         {

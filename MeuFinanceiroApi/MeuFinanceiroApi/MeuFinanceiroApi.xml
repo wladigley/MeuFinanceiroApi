@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeuFinanceiroApi</name>
+    </assembly>
+    <members>
+        <member name="M:MeuFinanceiroApi.Controllers.AcompanhamentoController.InfomacaoesFinanceiras">
+            <summary>
+            Retorna as informações atualizadas das Despesas, Receitas e Saldos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.DespesasController.AtualizarAssync(MeuFinanceiroApi.Model.Despesas)">
+            <summary>
+            Atualiza as infomações de uma Despesa já existente.
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.DespesasController.CriarAssync(MeuFinanceiroApi.Model.Despesas)">
+            <summary>
+            Cria uma nova Despesa.
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.DespesasController.RemoverAssync(System.Int32)">
+            <summary>
+            Remove uma Despesa infomando seu Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.DespesasController.RetornarTodasAssync">
+            <summary>
+            Retorna uma lista com todas as despesas cadastradas.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.DespesasController.RetornarUmaAssync(System.Int32)">
+            <summary>
+            Retorna somente uma Despesa de acordo com o Id informado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.ReceitasController.AtualizarAssync(MeuFinanceiroApi.Model.Receitas)">
+            <summary>
+            Atualiza as infomações de uma Receita já existente.
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.ReceitasController.CriarAssync(MeuFinanceiroApi.Model.Receitas)">
+            <summary>
+            Cria uma nova Receita.
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.ReceitasController.RemoverAssync(System.Int32)">
+            <summary>
+            Remove uma Receitas infomando seu Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.ReceitasController.RetornarTodasAssync">
+            <summary>
+            Retorna uma lista com todas as Receitas cadastradas.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeuFinanceiroApi.Controllers.ReceitasController.RetornarUmaAssync(System.Int32)">
+            <summary>
+            Retorna somente uma Receita de acordo com o Id informado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
