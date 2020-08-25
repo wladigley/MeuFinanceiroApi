@@ -35,8 +35,10 @@ namespace MeuFinanceiroApi
             services.AddTransient<ConnectionFactory>(ConnectionFactory => new ConnectionFactory(envModel.Server, envModel.DataBase, envModel.User, envModel.Password));
 
             services.AddTransient<IDespesasRepository, DespesasRepository>();
-
             services.AddTransient<IDespesasServices, DespesasServices>();
+
+            services.AddTransient<IReceitasRepository, ReceitasRepository>();
+            services.AddTransient<IReceitasServices, ReceitasServices>();
 
             services.AddSwaggerGen(c =>
             {
