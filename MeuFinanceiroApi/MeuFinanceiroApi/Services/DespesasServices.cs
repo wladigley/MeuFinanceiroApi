@@ -18,9 +18,9 @@ namespace MeuFinanceiroApi.Services
            return await despesasRepository.createAssync(entity);
         }
 
-        public async Task deleteAssync(int id)
+        public async Task<bool> deleteAssync(int id)
         {
-            await despesasRepository.deleteAssync(id);
+            return await despesasRepository.deleteAssync(id);
         }
 
         public async Task<IEnumerable<Despesas>> readAllAssync()

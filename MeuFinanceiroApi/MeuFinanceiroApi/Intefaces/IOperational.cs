@@ -11,6 +11,6 @@ namespace MeuFinanceiroApi.Intefaces
         Task<IEnumerable<T>> readAllAssync();
         Task<T> readOneAssync(int id);
         Task<bool> updateAssync(T entity);
-        Task deleteAssync(int id);
+        Task<bool> deleteAssync(int id);
     }
 }

@@ -4,13 +4,9 @@ services:
   meufinanceiroapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Server=localhost
+      - Server=192.168.1.4
       - Database=MeuFinanceiro
       - User=sa
-      - Password=mq9437?tn
+      - Password=245809
     ports:
       - "65135:80"
-networks:
-  default:
-   external:
-    name: network-cluster-docker

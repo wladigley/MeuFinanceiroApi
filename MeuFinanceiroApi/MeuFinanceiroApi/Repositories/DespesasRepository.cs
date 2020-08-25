@@ -25,9 +25,9 @@ namespace MeuFinanceiroApi.Repositories
             return await _dbConnenction.ExecuteAsync(DespesasScripts.INSERT_SINGLE_DESPESAS, entity);
         }
 
-        public async Task deleteAssync(int id)
+        public async Task<bool> deleteAssync(int id)
         {
-            await _dbConnenction.DeleteAsync(new Despesas { Id = id });
+            return await _dbConnenction.DeleteAsync(new Despesas { Id = id });
         }
 
         public async Task<IEnumerable<Despesas>> readAllAssync()

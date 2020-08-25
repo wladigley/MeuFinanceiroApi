@@ -72,6 +72,7 @@ namespace MeuFinanceiroApi
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "MeuFinanceiroAPI V1");
+                c.RoutePrefix = "swagger";
             });
 
             if (env.IsDevelopment())

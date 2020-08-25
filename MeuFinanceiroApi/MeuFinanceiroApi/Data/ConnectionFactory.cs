@@ -10,7 +10,7 @@ namespace MeuFinanceiroApi.Data
 
         public ConnectionFactory(string Server, string DataBase, string User, string Password)
         {
-            _connectionString = $"Data Source={Server};Initial Catalog={DataBase};Persist Security Info=True;User ID={User};Password={Password};";
+            _connectionString = $"Data Source={Server};Initial Catalog={DataBase};User ID={User};Password={Password}";
             _dbConnection = new SqlConnection(_connectionString);
         }
 
