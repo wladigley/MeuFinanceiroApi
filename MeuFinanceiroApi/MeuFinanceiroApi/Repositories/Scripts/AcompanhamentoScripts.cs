@@ -6,7 +6,7 @@
             SELECT 
                 rc.TotalReceitas,
                 td.TotalDespesas,
-                (rc.TotalReceitas-td.TotalDespesas) AS SaldoTotal 
+                (rc.TotalReceitas - td.TotalDespesas) AS SaldoTotal 
             FROM
                 (SELECT SUM(valor) AS TotalReceitas FROM Receitas ) AS rc
             JOIN

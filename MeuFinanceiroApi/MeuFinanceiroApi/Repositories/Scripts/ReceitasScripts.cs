@@ -7,6 +7,6 @@ namespace MeuFinanceiroApi.Repositories.Scripts
 {
     public class ReceitasScripts
     {
-        public static string INSERT_SINGLE_RECEITAS => "INSERT INTO Receitas (Descricao, valor, Data, Recebido) OUTPUT INSERTED.ID values (@Descricao, @valor, @Data, @Recebido)";
+        public static string INSERT_SINGLE_RECEITAS => "INSERT INTO Receitas (Descricao, valor, Data, Recebido) OUTPUT INSERTED.ID values (@Descricao, @Valor, @Data, @Recebido)";
     }
 }
